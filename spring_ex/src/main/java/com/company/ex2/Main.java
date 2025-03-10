@@ -11,10 +11,11 @@ public class Main {
 			input[i] = sc.nextInt();
 		}
 		
-		int n = input[0];
-		int k = input[1];
-		int l = input[2];
+		int n = input[0];	// 팀 수
+		int k = input[1];	// 합 
+		int l = input[2];	// 개인
 		int tot=0;int cnt=0;
+		boolean lswitch = true;
 		
 		int arr[][] = new int[n][3];
 		
@@ -27,15 +28,23 @@ public class Main {
 		for(int i=0;i<arr.length;i++) {
 			for(int j=0;j<arr[i].length;j++) {
 				tot += arr[i][j];
+				if(arr[i][j] < l) {
+					lswitch = false;
+				}
 			}
-			if(tot>k) {
+			if(tot>k && lswitch) {
 				cnt++;
+				for(int j=0;j<arr[i].length;j++) {
+
+				}
 			}
 			tot=0;
+			lswitch = true;
 		}
 		
+		System.out.println(cnt);
+
 		sc.close();
-		
 	}
 }
 

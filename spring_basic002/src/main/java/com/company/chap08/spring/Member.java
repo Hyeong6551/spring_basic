@@ -18,6 +18,20 @@ public class Member {
 		this.registerDateTime = regDateTime;
 	}
 
+	public Member(Long id, String email, String password, String name) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.name = name;
+	}
+
+	
+	public Member(String email) {
+		super();
+		this.email = email;
+	}
+
 	void setId(Long id) {
 		this.id = id;
 	}
@@ -48,4 +62,11 @@ public class Member {
 		this.password = newPassword;
 	}
 
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name
+				+ ", registerDateTime=" + registerDateTime + "]";
+	}
+
+	
 }

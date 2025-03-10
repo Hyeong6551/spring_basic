@@ -6,19 +6,30 @@ import java.time.LocalDateTime;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.company.chap03.config.AppCtx;
+import com.company.chap08.config.AppCtx;
 import com.company.chap08.spring.Member;
 import com.company.chap08.spring.MemberDao;
 
 public class MainForSpring {
+	private static ApplicationContext ctx = null;
 	
-	private static ApplicationContext ctx = null;	
-
 	public static void main(String[] args) throws IOException {
 		ctx = new AnnotationConfigApplicationContext(AppCtx.class);
 		MemberDao memberDao = ctx.getBean(MemberDao.class);
-		Member member = new Member("kim@korea.com", "1234", "홍길동", LocalDateTime.now());
-		memberDao.insert(member);
-		System.out.println("입력 성공!");
+		
+		// insert
+//		Member insertMember = new Member("kim@naver.com", "1324", "동길동", LocalDateTime.now());
+//		memberDao.insert(insertMember);
+		
+		// update
+//		Member updateMember = new Member(1L,"jae@naver.com","1111","형임니다");
+//		memberDao.update(updateMember);
+		
+		for(Member member : memberDao.selectAll()) {
+			System.out.println(member);
+		}
+		
+		Member members = new Member("kim@naver.com");
+		System.out.println(memberDao.selectByEmail(members.getEmail()));
 	}
 }
