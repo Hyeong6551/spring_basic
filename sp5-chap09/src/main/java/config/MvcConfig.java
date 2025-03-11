@@ -22,5 +22,4 @@ public class MvcConfig implements WebMvcConfigurer {
 		// JSP 뷰를 사용하도록 설정
 		registry.jsp("/WEB-INF/view/", ".jsp");
 	}
-
 }

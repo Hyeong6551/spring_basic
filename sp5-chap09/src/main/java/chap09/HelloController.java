@@ -16,8 +16,13 @@ public class HelloController {
 	
 	@GetMapping("/hello")
 	public String hello(Model model,
-			@RequestParam(value = "name", required = false) String name) {
+			@RequestParam(value = "name", required = false, defaultValue="Guest") String name) {
 		model.addAttribute("greeting", "안녕하세요, " + name);
 		return "hello";
+	}
+	
+	@GetMapping("/form")
+	public String form() {
+		return "form";
 	}
 }
