@@ -20,7 +20,7 @@ public class UserDao {
         user.setId(rs.getLong("id"));
         user.setName(rs.getString("name"));
         user.setEmail(rs.getString("email"));
-        user.setAge(rs.getInt("age"));
+        user.setAge(rs.getInt("age")); 
         return user;
     };
 

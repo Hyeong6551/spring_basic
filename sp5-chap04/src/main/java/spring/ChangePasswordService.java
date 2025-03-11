@@ -1,9 +1,9 @@
-package com.company.chap03.spring;
+package spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ChangePasswordService {
-	
+
 	@Autowired
 	private MemberDao memberDao;
 
@@ -17,8 +17,6 @@ public class ChangePasswordService {
 		memberDao.update(member);
 	}
 
-	// 매개변수에도 가능
-	@Autowired
 	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
